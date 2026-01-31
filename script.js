@@ -1,3 +1,9 @@
+// Akan names table
+const akanNames = {
+     male: ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"], 
+     female: ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"] 
+    };
+
 //1. DOM ELEMENTS
 const birthYear = document.getElementById('birthyear');
 const birthMonth = document.getElementById('birthmonth');
@@ -8,7 +14,6 @@ const genderInput = document.getElementById('gender');
 function isLeapYear(year){
   return (year % 4 === 0 );
 }
-
 
 //2.MAIN FUNCTION
 function getAkanName() {
@@ -38,4 +43,6 @@ function getAkanName() {
          alert("Please select a gender");
         return;
     }
+
+    
 }
