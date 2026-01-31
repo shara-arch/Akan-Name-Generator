@@ -21,7 +21,7 @@ function getAkanName() {
     event.preventDefault();
     //2.1 GETTING USER INPUT
     const year = parseInt(birthYear.value, 10);  //(,10) makes sure numbers are in base 10
-    const month = parseInt(birthMonth.value, 10) - 1 ;
+    const month = parseInt(birthMonth.value, 10) ;
     const day = parseInt(birthDay.value, 10);
     const gender = genderInput.value;
     
@@ -37,7 +37,7 @@ function getAkanName() {
     } 
     // Validation: Day (with leap year check for February)
     const daysInMonth = [31, (isLeapYear(year) ? 29 : 28), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]; 
-    if (isNaN(day) || day < 1 || day > daysInMonth[month]) {
+    if (isNaN(day) || day < 1 || day > daysInMonth[month - 1]) {
          alert("Please enter a valid Day for the selected month/year"); 
          return; 
     }
