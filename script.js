@@ -51,7 +51,7 @@ function getAkanName() {
     const YY = year % 100;
     const MM = birthMonth;
     const DD = day;
-    const d = ((( CC / 4 ) - ( 2 * CC ) - 1 ) + (( 5 * YY ) / 4 ) + (( 26 * ( MM + 1 )) / 10 )) % 7 ;
+    const d = Math.floor(((( CC / 4 ) - ( 2 * CC ) - 1 ) + (( 5 * YY ) / 4 ) + (( 26 * ( MM + 1 )) / 10 )) % 7 );
     
     //Map results of week
     const daysOfWeek = ["Sunday", "Monday", "Tuesday","Wednesday", "Thursday", "Friday"];
