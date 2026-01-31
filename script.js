@@ -9,6 +9,7 @@ const birthYear = document.getElementById('birthyear');
 const birthMonth = document.getElementById('birthmonth');
 const birthDay = document.getElementById('birthday');
 const genderInput = document.getElementById('gender');
+const resultBox = document.getElementById('result-message');
 
 //Check Leap-year
 function isLeapYear(year){
@@ -17,6 +18,7 @@ function isLeapYear(year){
 
 //2.MAIN FUNCTION
 function getAkanName() {
+    event.preventDefault();
     //2.1 GETTING USER INPUT
     const year = parseInt(birthYear.value, 10);  //(,10) makes sure numbers are in base 10
     const month = parseInt(birthMonth.value, 10) - 1 ;
@@ -44,5 +46,24 @@ function getAkanName() {
         return;
     }
 
+    //2.3 CALCULATE THE DAY OF THE WEEK
+    const CC = Math.floor[year/100];
+    const YY = year % 100;
+    const MM = birthMonth;
+    const DD = day;
+    const d = ((( CC / 4 ) - ( 2 * CC ) - 1 ) + (( 5 * YY ) / 4 ) + (( 26 * ( MM + 1 )) / 10 )) % 7 ;
     
+    //Map results of week
+    const daysOfWeek = ["Sunday", "Monday", "Tuesday","Wednesday", "Thursday", "Friday"];
+    const dayName = daysOfWeek[d]
+    //Get Akan Name
+    const akanName = akanNames[gender][d];
+    //Show result box
+    // resultBox.classList.add('show');
+    resultBox.innerHTML = `
+     <p>You were born on <strong>${dayName}</strong>, ${day}/${month}/${year}.</p>
+     <p>Your Akan name is <strong>${akanName}</strong>.</p> `
+     ;
 }
+// Attach event listener to form
+ document.getElementById("nameForm").addEventListener("submit", getAkanName);
