@@ -20,8 +20,8 @@ This is a simple web application that calculates the day of the week a user was 
 
 ## Setup Instructions.
 - Clone the repository:
- ```bash
-    git clone https://github.com/shara-arch/Akan-Name-Generator.git `
+ (```bash
+    git clone https://github.com/shara-arch/Akan-Name-Generator.git )
 - Open terminal command line then navigate to the root folder of the application. `cd Akan-Name-Generator`
 - Open `index.html` on your preferred browser.
 
