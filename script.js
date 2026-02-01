@@ -73,8 +73,10 @@ function getAkanName(event) {
   const dayName = daysOfWeek[dayOfWeek];
 
   //Show result box
-  resultBox.innerHTML = `
-    <p>You were born on <strong>${dayName}</strong>, ${day}/${month}/${year}.</p>
+  resultBox.classList.add('show');
+  resultBox.style.display = "block";
+  resultBox.innerHTML = 
+  ` <p>You were born on <strong>${dayName}</strong>, ${day}/${month}/${year}.</p>
     <p>Your Akan name is <strong>${akanName}</strong>.</p>`;
 }
 
