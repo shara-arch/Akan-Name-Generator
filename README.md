@@ -14,3 +14,9 @@ This is a simple web application that calculates the day of the week a user was 
 | Saturday  | Kwame     | Ama         |
 ---------------------------------------
 
+## Author's Information
+#### Author's name: Sharon Moegi
+#### Contact Info : (Email) sharamoegi@gmail.com
+
+
+
