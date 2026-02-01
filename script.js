@@ -56,7 +56,7 @@ function getAkanName(event) {
     return;
   }
 
-  //2.3 CALCULATE THE DAY OF THE WEEK using Date (0=Sunday..6=Saturday)
+  //2.3 CALCULATE THE DAY OF THE WEEK 
   const dateObj = new Date(year, month - 1, day);
   const dayOfWeek = dateObj.getDay();
 
@@ -64,12 +64,9 @@ function getAkanName(event) {
   let akanName;
   if (gender === 'male') {
     akanName = akanNames.maleNames[dayOfWeek];
-  } else if (gender === 'female') {
-    akanName = akanNames.femaleNames[dayOfWeek];
   } else {
-    alert('Unknown gender selected.');
-    return;
-  }
+    akanName = akanNames.femaleNames[dayOfWeek];
+  } 
 
   //Map results of week
   const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
