@@ -32,29 +32,26 @@ function getAkanName(event) {
   const currentYear = new Date().getFullYear();
   if (isNaN(year) || year < 1900 || year > currentYear) {
     alert(`Please enter a valid year between 1900 and ${currentYear}.`);
-    birthYear.focus();
-    resultBox.innerHTML = '';
+   
     return;
   }
 
   if (isNaN(month) || month < 1 || month > 12) {
     alert('Please enter a valid month (1–12).');
-    birthMonth.focus();
-    resultBox.innerHTML = '';
+   
     return;
   }
 
   const daysInMonth = [31, (isLeapYear(year) ? 29 : 28), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
   if (isNaN(day) || day < 1 || day > daysInMonth[month - 1]) {
     alert('Please enter a valid day for the selected month/year.');
-    birthDay.focus();
-    resultBox.innerHTML = '';
+    
     return;
   }
 
   if (!gender) {
     alert('Please select a gender.');
-    resultBox.innerHTML = '';
+    
     return;
   }
 
@@ -84,5 +81,11 @@ function getAkanName(event) {
     
 }
 
-// Attach event listener to form
+// Runs function using submit button
 document.getElementById('nameForm').addEventListener('submit', getAkanName);
+// Trigger calculation when "Enter" key is pressed
+massInput.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        calculateWeight();
+    }
+    });
