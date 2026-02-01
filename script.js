@@ -10,6 +10,8 @@ const birthMonth = document.getElementById('birthmonth');
 const birthDay = document.getElementById('birthday');
 const genderInput = document.getElementById('gender');
 const resultBox = document.getElementById('result-message');
+const clearBtn = document.getElementById("clearBtn");
+
 
 // Check leap-year 
 function isLeapYear(year) {
@@ -78,6 +80,8 @@ function getAkanName(event) {
   resultBox.innerHTML = 
   ` <p>You were born on <strong>${dayName}</strong>, ${day}/${month}/${year}.</p>
     <p>Your Akan name is <strong>${akanName}</strong>.</p>`;
+    
+    
 }
 
 // Attach event listener to form
