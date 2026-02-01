@@ -36,8 +36,13 @@ This is a simple web application that calculates the day of the week a user was 
    - Gender input is null 
 
 ### 3. Clears Form and Reset the message on Click
-    - Input : "Clear Form"
-    - Output: "Refresh page"
+   - INPUT : "Clear Form"
+   - OUTPUT: "Refresh page"
+
+## Technologies Used
+- HTML
+- CSS
+- JavaScript
 
    
 
