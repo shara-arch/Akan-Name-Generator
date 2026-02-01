@@ -45,7 +45,7 @@ This is a simple web application that calculates the day of the week a user was 
 - JavaScript
 
 ## Link to Live Cite: 
- (!PASTE LINK HERE!)
+   https://shara-arch.github.io/Akan-Name-Generator/
 
 ## LICENSE
 MIT License
