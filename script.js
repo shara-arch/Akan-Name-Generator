@@ -1,7 +1,7 @@
 // Akan names table
 const akanNames = {
-     male: ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"], 
-     female: ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"] 
+     maleNames: ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"], 
+     femaleNames: ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"] 
     };
 
 //1. DOM ELEMENTS
@@ -17,7 +17,7 @@ function isLeapYear(year){
 }
 
 //2.MAIN FUNCTION
-function getAkanName() {
+function getAkanName(event) {
     event.preventDefault();
     //2.1 GETTING USER INPUT
     const year = parseInt(birthYear.value, 10);  //(,10) makes sure numbers are in base 10
@@ -49,20 +49,28 @@ function getAkanName() {
     //2.3 CALCULATE THE DAY OF THE WEEK
     const CC = Math.floor[year/100];
     const YY = year % 100;
-    const MM = birthMonth;
+    const MM = month;
     const DD = day;
     const d = Math.floor(((( CC / 4 ) - ( 2 * CC ) - 1 ) + (( 5 * YY ) / 4 ) + (( 26 * ( MM + 1 )) / 10 )) % 7 );
     
+    // Select Akan name based on gender
+  let akanName;
+  if (gender.value === "male") {
+    akanName = maleNames[dayOfWeek];
+  } else {
+    akanName = femaleNames[dayOfWeek];
+  }
+
     //Map results of week
     const daysOfWeek = ["Sunday", "Monday", "Tuesday","Wednesday", "Thursday", "Friday"];
-    const dayName = daysOfWeek[d]
+    const dayName = daysOfWeek[d];
     //Get Akan Name
     const akanName = akanNames[gender][d];
     //Show result box
     // resultBox.classList.add('show');
     resultBox.innerHTML = `
-     <p>You were born on <strong>${dayName}</strong>, ${day}/${month}/${year}.</p>
-     <p>Your Akan name is <strong>${akanName}</strong>.</p> `
+     <p> You were born on <strong>${dayName}</strong>, ${day}/${month}/${year}.</p>
+     <p> Your Akan name is <strong>${akanName}</strong>.</p> `
      ;
 }
 // Attach event listener to form
