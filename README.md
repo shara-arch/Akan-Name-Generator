@@ -25,6 +25,20 @@ This is a simple web application that calculates the day of the week a user was 
 - Open terminal command line then navigate to the root folder of the application. `cd Akan-Name-Generator`
 - Open `index.html` on your preferred browser.
 
+## Behaviour Driven Development
+### 1. Displays Form for Entering Date and Gender
+   - INPUT: "User's Birthdate Entered"
+   - INPUT: "User's Gender Entered"
+   - OUTPUT: "Displays User's Akan Name According to Submitted Date and Gender"
+
+### 2. Displays an Error message if :
+   - Date input is null or incorrect.
+   - Gender input is null 
+
+### 3. Clears Form and Reset the message on Click
+    - Input : "Clear Form"
+    - Output: "Refresh page"
+
    
 
 
