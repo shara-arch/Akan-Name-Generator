@@ -90,9 +90,9 @@ function getAkanName(event) {
 
 // Runs function using submit button
 document.getElementById('nameForm').addEventListener('submit', getAkanName);
-// Trigger calculation when "Enter" key is pressed
+// Trigger calculation when "Enter" key is pressed.
 massInput.addEventListener("keypress", function(event) {
     if (event.key === "Enter") {
-        getAkanName();
+        getAkanName(event);
     }
     });
