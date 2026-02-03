@@ -51,21 +51,32 @@ function getAkanName(event) {
         return;
   }
 
-  //2.3 CALCULATE THE DAY OF THE WEEK 
-  const dateObj = new Date(year, month - 1, day);
-  const dayOfWeek = dateObj.getDay();
+  //2.3 CALCULATE THE DAY OF THE WEEK using formula
+  let CC = Math.floor(year / 100);
+  let YY = Math.floor(year % 100);
+  let MM = month;
+  let DD = day;
 
-  // Select Akan name based on gender
+  let d = Math.floor(
+    (
+      ((CC / 4) - (2 * CC) - 1)
+      + ((5 * YY) / 4)
+      + ((26 * (MM + 1)) / 10)
+      + DD
+    ) % 7
+  );
+
+  // Select Akan name based on gender and day d
   let akanName;
   if (gender === 'male') {
-    akanName = akanNames.maleNames[dayOfWeek];
+    akanName = akanNames.maleNames[d -1 ];
   } else {
-    akanName = akanNames.femaleNames[dayOfWeek];
-  } 
+    akanName = akanNames.femaleNames[d - 1];
+  }
 
   //Map results of week
   const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-  const dayName = daysOfWeek[dayOfWeek];
+  const dayName = daysOfWeek[d - 1];
 
   //Show result box
   resultBox.classList.add('show');
@@ -82,6 +93,6 @@ document.getElementById('nameForm').addEventListener('submit', getAkanName);
 // Trigger calculation when "Enter" key is pressed
 massInput.addEventListener("keypress", function(event) {
     if (event.key === "Enter") {
-        calculateWeight();
+        getAkanName();
     }
     });
