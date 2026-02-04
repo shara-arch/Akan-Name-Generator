@@ -51,33 +51,21 @@ function getAkanName(event) {
         return;
   }
 
-  //2.3 CALCULATE THE DAY OF THE WEEK using formula
-  
-  let CC = Math.floor(year / 100);
-  let YY = Math.floor(year % 100);
-  let MM = month;
-  let DD = day;
+  //2.3 CALCULATE THE DAY OF THE WEEK using getDay()
+  const dateObj = new Date(year, month - 1, day);
+  const dayOfWeek = dateObj.getDay(); // 0=Sunday, 6=Saturday
 
-  let d = Math.floor(
-    (
-      ((CC / 4) - (2 * CC) - 1)
-      + ((5 * YY) / 4)
-      + ((26 * (MM + 1)) / 10)
-      + DD
-    ) % 7
-  );
-
-  // Select Akan name based on gender and day d
+  // Select Akan name based on gender and day
   let akanName;
   if (gender === 'male') {
-    akanName = akanNames.maleNames[d -1 ];
+    akanName = akanNames.maleNames[dayOfWeek];
   } else {
-    akanName = akanNames.femaleNames[d - 1];
+    akanName = akanNames.femaleNames[dayOfWeek];
   }
 
   //Map results of week
   const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-  const dayName = daysOfWeek[d - 1];
+  const dayName = daysOfWeek[dayOfWeek];
 
   //Show result box
   resultBox.classList.add('show');
@@ -91,9 +79,3 @@ function getAkanName(event) {
 
 // Runs function using submit button
 document.getElementById('nameForm').addEventListener('submit', getAkanName);
-// Trigger calculation when "Enter" key is pressed.
-massInput.addEventListener("keypress", function(event) {
-    if (event.key === "Enter") {
-        getAkanName(event);
-    }
-    });
