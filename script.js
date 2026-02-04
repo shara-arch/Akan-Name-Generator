@@ -52,6 +52,7 @@ function getAkanName(event) {
   }
 
   //2.3 CALCULATE THE DAY OF THE WEEK using formula
+  
   let CC = Math.floor(year / 100);
   let YY = Math.floor(year % 100);
   let MM = month;
